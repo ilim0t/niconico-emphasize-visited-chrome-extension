@@ -1,0 +1,18 @@
+{
+  "name": "Emphasize visited video (Niconico)",
+  "version": "0.1",
+  "description": "Emphasize the videos you've visited on nicovideo.com.",
+  "permissions": ["history"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.nicovideo.jp/*"],
+      "run_at": "document_end",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "manifest_version": 2
+}
