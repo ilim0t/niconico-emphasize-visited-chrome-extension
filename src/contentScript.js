@@ -29,3 +29,20 @@ observer.observe(document.body, {
     attributes: true,
     attributeFilter: ["class"]
 });
+
+/* 
+    動画ページで、Youtubeと同じく0-9キーを押すと指定の時間位置に移動するように
+*/
+
+const keyMap = new Map(Array.from({ length: 10 }, (v, k) => [k.toString(), k / 10]));
+
+document.addEventListener("keydown", event => {
+    if (!keyMap.has(event.key)) {
+        return;
+    }
+
+    const videos = document.getElementsByTagName("video");
+    for (const video of videos) {
+        video.currentTime = video.duration * keyMap.get(event.key);
+    }
+})

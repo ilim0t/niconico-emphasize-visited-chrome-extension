@@ -1,6 +1,6 @@
 {
   "name": "Niconico Utilities",
-  "version": "0.2",
+  "version": "0.3",
   "description": "ニコニコ動画関連の改善",
   "permissions": ["history"],
   "background": {
